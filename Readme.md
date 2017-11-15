@@ -3,6 +3,8 @@ Generated using dotnet core's cli for a lambda.AspNetCoreWebAPI, then adjusted t
 Setup
 ===
 
+First setup run `dotnet restore`
+
 Generate a zip wwith the code for deploy
 * `dotnet lambda package`
 
