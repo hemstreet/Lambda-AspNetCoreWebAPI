@@ -18,3 +18,5 @@ In order to get the full value out of this project, We need to setup the followi
 Resources
 ====
 * https://github.com/aws/aws-lambda-dotnet/blob/master/Libraries/src/Amazon.Lambda.AspNetCoreServer/README.md
+* https://aws.amazon.com/blogs/developer/creating-net-core-aws-lambda-projects-without-visual-studio/
+* http://www.jerriepelser.com/blog/aspnet-core-aws-lambda-serverless-application/
