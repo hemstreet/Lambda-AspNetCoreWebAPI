@@ -1,6 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
+using AspNetCoreWebAPI.Helpers;
 
 namespace AspNetCoreWebAPI.Controllers
 {
@@ -8,23 +10,13 @@ namespace AspNetCoreWebAPI.Controllers
     public class ValuesController : Controller
     {
         
-        public static async Task<string> MakeRequest()
-        {
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync("https://jsonplaceholder.typicode.com/users");
-            
-            string content = await response.Content.ReadAsStringAsync();
-            
-            return content;
-        }
-
         // GET api/values
         [HttpGet]
         public async Task<string> Get()
         {            
-            string user = await MakeRequest();
+            string resposne = await Http.Get("https://jsonplaceholder.typicode.com/users");
            
-            return user;
+            return resposne;
         }
 
         // GET api/values/5
@@ -36,8 +28,17 @@ namespace AspNetCoreWebAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task<string>Post([FromBody]string value)
         {
+            var payload = new Dictionary<string, string>
+            {
+                {"foo", "bar"},
+                {"fizz", "buzz"}  
+            };
+
+            string response = await Http.Post("https://jsonplaceholder.typicode.com/post", payload);
+
+            return response;
         }
 
         // PUT api/values/5
