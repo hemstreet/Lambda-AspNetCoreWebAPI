@@ -27,6 +27,9 @@
     <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.1.0" />
     <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="0.10.1-preview1" />
     <PackageReference Include="Amazon.Lambda.Logging.AspNetCore" Version="1.1.0" />
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.4.0" />
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Amazon.Lambda.Tools" Version="1.8.0" />

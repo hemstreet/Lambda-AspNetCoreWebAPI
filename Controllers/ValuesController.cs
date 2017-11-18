@@ -23,7 +23,12 @@ namespace AspNetCoreWebAPI.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            Database database = new Database();
+
+            var results = database.query("SELECT * FROM test.test_schema.test_table");
+
+            return results.ToString();
+
         }
 
         // POST api/values
